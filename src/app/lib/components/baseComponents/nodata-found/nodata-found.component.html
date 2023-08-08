@@ -1,0 +1,11 @@
+<div class="nodata-found-section">
+  <div class="nodata-wrapper">
+    <div class="nodata-found-image">
+      <img src="../../../assets/images/icons/empty_states.svg" alt="nodata">
+      <p *ngIf="message">{{message}}</p>
+    </div>
+    <button *ngIf="buttonText" class="btn-explore">
+      <span>{{buttonText}}</span>
+    </button>
+  </div>
+</div>

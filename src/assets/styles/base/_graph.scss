@@ -1,0 +1,170 @@
+.common-graph-wrapper {
+  .details-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    .stats-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      .text-icon {
+          display: flex;
+          align-items: center;
+          span {
+              color: var(--1inch-tc-01);
+              font-size: 1rem;
+              font-weight: 400;
+              line-height: 1.625rem;
+          }
+          .icon {
+              display: flex;
+              width: 1rem;
+              height: 1rem;
+              padding: 0.125rem;
+              justify-content: center;
+              align-items: center;
+              svg {
+                  width: 0.75rem;
+                  height: 0.75rem;
+              }
+          }
+      }
+      .sale-stat {
+          color: var(--1inch-tc-02);
+          font-size: 1rem;
+          font-weight: 400;
+          line-height: 1rem;
+      }
+      .val-percentage {
+          font-size: 1rem;
+          font-weight: 400;
+          line-height: 1.625rem;
+          &.positive-percentage {
+              color: var(--1inch-tc-11);
+          }
+          &.negative-percentage {
+              color: var(--1inch-tc-04);
+          }
+      }
+      .now-text-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+        .now {
+          color: var(--1inch-tc-02);
+          font-size: 1rem;
+          font-weight: 400;
+          line-height: 0.75rem;
+        }
+        .stats-text {
+          color: var(--1inch-tc-01);
+          font-size: 1rem;
+          font-weight: 500;
+          line-height: 1.625rem;
+        }
+      }
+    }
+    .button-filter-wrapper {
+      &.analytics-hide {
+          .f-button-wrapper {
+              display: none !important;
+              @include media-min-md {
+                  display: flex !important;
+              }
+          }
+          .dropdown {
+              @include media-min-md {
+                  display: none !important;
+              }
+          }
+      }
+      .f-button-wrapper {
+            display: none;
+          height: 2rem;
+          padding: 0.25rem;
+          align-items: center;
+          border-radius: 0.75rem;
+          background: var(--inch-cbc-09);
+          box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.25), 0px 0px 4px 0px rgba(0, 0, 0, 0.10);
+          @include media-min-lg {
+            display: flex;
+          }
+          .f-btn {
+              display: flex;
+              padding: 0.625rem 0.5rem;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              gap: 0.25rem;
+              align-self: stretch;
+              cursor: pointer;
+              border-radius: 0.5rem;
+              background: transparent;
+              color: var(--1inch-tc-01);
+              text-align: center;
+              font-size: 0.8125rem;
+              font-weight: 500;
+              line-height: normal;
+              &.active {
+                  width: 2.70831rem;
+                  background: var(--1inch-cbc-10) !important;
+              }
+          }
+      }
+      .dropdown {
+        @include media-min-lg {
+            display: none;
+        }
+          button {
+              border: none;
+              display: flex;
+              padding: 0.5rem 0.75rem;
+              justify-content: center;
+              align-items: center;
+              gap: 0.25rem;
+              border-radius: 0.5rem;
+              background: rgba(47, 138, 245, 0.16);
+              span {
+                  color: var(--1inch-tc-08);
+                  text-align: center;
+                  font-size: 0.8125rem;
+                  font-weight: 400;
+                  line-height: 1rem;
+              }
+              svg {
+                  width: 1rem;
+                  height: 1rem;
+              }
+          }
+          ul {
+              margin-top: 0.5rem;
+              padding: 1rem 0px;
+              min-width: 3.813rem;
+              background: var(--1inch-bc-02);
+              box-shadow: 0px 0px 0.25rem rgba(0, 0, 0, 0.1),
+                0px 0.01rem 0.125rem rgba(0, 0, 0, 0.25);
+              border-radius: 0.5rem;
+              li {
+                width: 100%;
+                a {
+                  color: $theme-clr-litewhite;
+                  padding: 0.5rem 1rem;
+                  transition: all 0.4s ease-in-out;
+                  &:hover {
+                    background: rgba(6, 10, 16, 0.5);
+                  }
+                }
+              }
+            }
+      }
+    }
+  }
+  .graph {
+      width: 100%;
+      img {
+          width: 100%;
+      }
+  }
+}

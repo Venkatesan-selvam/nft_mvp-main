@@ -1,0 +1,102 @@
+<div
+  class="table-view-collection w-100"
+  *ngIf="mdDeviceView"
+  id="table-view-collection"
+>
+  <div class="table-responsive w-100">
+    <table class="table table-borderless">
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Rarity</th>
+          <th>Seller</th>
+          <th>On</th>
+          <th>Price</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody *ngIf="itemCollections?.length > 0">
+        <tr
+          *ngFor="let itemDetail of itemCollections"
+          (click)="goToPage(itemDetail?.token?.tokenId)"
+          class="cursor-pointer"
+        >
+          {{
+            formatAddress(itemDetail?.token?.owner)
+          }}
+          <td>
+            <div class="profile-item">
+              <img src="{{ itemDetail?.token?.image }}" alt="profile" />
+              <p>{{ itemDetail?.token?.name }}</p>
+            </div>
+          </td>
+          <td>
+            <div class="badge">
+              <span>#</span>
+              <span>{{ itemDetail?.token?.rarityRank }}</span>
+            </div>
+          </td>
+          <td>
+            <p class="common-text">{{ this.formatChainAddress }}</p>
+          </td>
+          <td>
+            <div
+              class="on-icon"
+              *ngIf="itemDetail?.market?.floorAsk?.source?.icon"
+            >
+              <img
+                src="{{ itemDetail?.market?.floorAsk?.source?.icon }}"
+                class="on_image"
+                alt="on image"
+              />
+            </div>
+          </td>
+          <td>
+            <div class="price-buy-wrapper">
+              <div
+                class="price"
+                *ngIf="itemDetail?.market?.floorAsk?.price?.amount?.decimal"
+              >
+                <p>
+                  {{ itemDetail?.market?.floorAsk?.price?.amount?.decimal }}
+                </p>
+                <app-svg-icons iconName="ethIcon" class="icon"></app-svg-icons>
+              </div>
+              <div class="line"></div>
+              <p class="buy-text">Buy</p>
+            </div>
+          </td>
+          <td>
+            <div
+              class="add-to-cart ms-auto"
+              appTooltip
+              data-bs-placement="top"
+              title="Add to bag"
+            >
+              <app-svg-icons iconName="cartIcon"></app-svg-icons>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div *ngIf="itemCollections?.length === 0" class="no-data">
+      No Data Found
+    </div>
+  </div>
+</div>
+
+<app-card-view-collections
+  class="w-100"
+  *ngIf="mobDeviceView"
+  [itemsCollections]="itemCollections"
+  (dubTokenId)="goToPage($event)"
+></app-card-view-collections>
+
+<div
+  class="d-flex justify-content-center mt-3"
+  *ngIf="this.pagination && itemCollections?.length !== 0"
+>
+  <button class="btn-viewmore" (click)="loadMore(true)">
+    <span>View More</span>
+  </button>
+</div>

@@ -1,0 +1,417 @@
+.item-page__wrapper {
+    position: relative;
+    .nft-item-info-wrapper {
+        display: flex;
+        flex-direction: column;
+        @include media-min-md {
+            flex-direction: row;
+            gap: 1rem;
+        }
+        @include media-min-lg {
+            gap: 2rem;
+        }
+        @include media-min-xl {
+            gap: 3.75rem;
+        }
+        .nft-item-left__side {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1.5rem;
+            @include media-min-md {
+                width: calc(100% - 24rem);
+            }
+            @include media-min-lg {
+                width: calc(100% - 27rem);
+            }
+            @include media-min-xl {
+                width: calc(100% - 34.75rem);
+            }
+            .share-button-wrapper {
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                .share-btn {
+                    cursor: pointer;
+                    display: flex;
+                    padding: 0.5625rem;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 0.5rem;
+                    border-radius: 0.75rem;
+                    border: 1px solid #202835;
+                    svg {
+                        width: 1.5rem;
+                        height: 1.5rem;
+                    }
+                }
+            }
+            .nft-name-wrapper {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+                width: 100%;
+                .main-name-wrapper {
+                    display: flex;
+                    width: 100%;
+                    justify-content: space-between;
+                    align-items: center;
+                    .name-wrapper {
+                        display: flex;
+                        align-items: center;
+                        gap: 0.5rem;
+                        .back-icon {
+                            display: flex;
+                            padding: 0.25rem;
+                            align-items: flex-start;
+                            gap: 0.625rem;
+                            border-radius: 0.5rem;
+                            background-color: transparent;
+                            cursor: pointer;
+                            svg {
+                                width: 1.5rem;
+                                height: 1.5rem;
+                            }
+                            &:hover {
+                                background-color: var(--1inch-cbc-05);
+                            }
+                        }
+                        .name {
+                            display: flex;
+                            align-items: center;
+                            gap: 0.25rem;
+                            h6 {
+                                cursor: pointer;
+                                margin: 0;
+                                color: var(--1inch-tc-01);
+                                font-size: 0.8125rem;
+                                font-weight: 500;
+                                line-height: 1rem; /* 123.077% */
+                                @include media-min-md {
+                                    font-size: 1rem;
+                                    line-height: 1.625rem; /* 162.5% */
+                                }
+                            }
+                            svg {
+                                width: 1rem;
+                                height: 1rem;
+                            }
+                        }
+                    }
+                    .share-button-wrapper {
+                        display: none;
+                        @include media-min-lg {
+                            display: flex !important;
+                        }
+                    }
+                }
+                h3 {
+                    display: none;
+                    @include media-min-lg {
+                        display: block;
+                        margin: 0;
+                        color: var(--1inch-tc-01);
+                        font-size: 2rem;
+                        font-weight: 600;
+                        line-height: 2.375rem; /* 118.75% */
+                    }
+                }
+            }
+            .collection_desc {
+                p {
+                    margin: 0;
+                    color: var(--1inch-tc-13);
+                    font-size: 0.875rem;
+                    font-weight: 400;
+                    line-height: 1.5rem;
+                    @include media-min-md {
+                      font-size: 1rem;
+                      line-height: 1.625rem; /* 162.5% */
+                    }
+                    span {
+                      color: var(--1inch-tc-14);
+                    }
+                }
+            }
+            .social-media-link-wrapper {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;
+                .media-link-wrapper {
+                    display: flex;
+                    align-items: flex-start;
+                    gap: 1.75rem;
+                    .icon {
+                        display: flex;
+                        width: 1rem;
+                        height: 1rem;
+                        justify-content: center;
+                        align-items: center;
+                        cursor: pointer;
+                        svg {
+                            width: 1rem;
+                            height: 1rem;
+                            &:hover {
+                                path {
+                                    fill-opacity: 1 !important;
+                                }
+                            }
+                        }
+                    }
+                }
+                .share-button-wrapper {
+                    @include media-min-lg {
+                        display: none !important;
+                    }
+                }
+            }
+            .collection-item-nft-stats-wrapper {
+                width: 100%;
+                overflow-y: hidden;
+                overflow-x: auto;
+                @include scroll-bar(0,0);
+                border-top: 1px solid #212936;
+                border-bottom: 1px solid #212936;
+                .nft-stats-wrapper {
+                    display: flex;
+                    padding: 2rem 0rem;
+                    justify-content: space-between;
+                    align-items: flex-start;
+                    gap: 2.5rem;
+                    @include media-min-md {
+                        padding: 2.5rem 0rem;
+                    }
+                    .nft-stats {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: flex-start;
+                        gap: 0.5rem;
+                        .stats-name {
+                            white-space: nowrap;
+                            color: var(--1inch-tc-02);
+                            font-size: 0.8125rem;
+                            line-height: 1rem; /* 123.077% */
+                            font-weight: 300;
+                            @include media-min-sm {
+                            font-size: 1rem;
+                            line-height: 1.625rem; /* 162.5% */
+                            }
+                        }
+                        .price {
+                            display: flex;
+                            align-items: center;
+                            gap: 0.125rem;
+                            p {
+                                white-space: nowrap;
+                                margin: 0;
+                                color: var(--1inch-tc-01);
+                                font-weight: 400;
+                                font-size: 1rem;
+                                line-height: 1.625rem; /* 162.5% */
+                                @include media-min-sm {
+                                    font-size: 1.25rem;
+                                    line-height: 1.5rem; /* 120% */
+                                }
+                            }
+                            .icon {
+                                display: flex;
+                                width: 1rem;
+                                height: 1rem;
+                                padding: 0.125rem;
+                                justify-content: center;
+                                align-items: center;
+                                @include media-min-sm {
+                                    width: 1.5rem;
+                                    height: 1.5rem;
+                                    padding: 0.1875rem;
+                                }
+                                svg {
+                                    width: 0.75rem;
+                                    height: 0.75rem;
+                                    @include media-min-sm {
+                                        width: 1.125rem;
+                                        height: 1.125rem;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .account-details-wrapper {
+                display: flex;
+                width: 100%;
+                align-items: flex-start;
+                gap: 1rem;
+                .account-detail {
+                    display: flex;
+                    padding: 0.5rem 0.75rem;
+                    align-items: center;
+                    gap: 0.5rem;
+                    flex: 1 0 0;
+                    border-radius: 1rem;
+                    background-color: var(--1inch-cbc-03);
+                    .acc-profile {
+                        display: flex;
+                        width: 1.5rem;
+                        height: 1.5rem;
+                        justify-content: center;
+                        align-items: center;
+                        img {
+                            width: 1.5rem;
+                            height: 1.5rem;
+                            border-radius: 1.5rem;
+                        }
+                    }
+                    .profile-account-details {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: flex-start;
+                        width: calc(100% - 2rem);
+                        .detail-name {
+                            margin: 0;
+                            color: var(--1inch-tc-02);
+                            font-size: 0.8125rem;
+                            font-weight: 400;
+                            line-height: 1rem; /* 123.077% */
+                        }
+                        .acc-number {
+                            margin: 0;
+                            white-space: nowrap;
+                            font-size: 0.8125rem;
+                            font-weight: 400;
+                            line-height: 1rem; /* 123.077% */
+                            color: var(--1inch-tc-01);
+                            @include media-min-md {
+                                font-size: 1rem;
+                                line-height: 1.625rem; /* 162.5% */
+                            }
+                        }
+                    }
+                }
+            }
+            .nft-graph-wrapper {
+                width: 100%;
+                .accordion {
+                    display: flex;
+                    width: 100%;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 1.5rem;
+                    @include media-min-lg {
+                        gap: 2rem;
+                    }
+                }
+            }
+        }
+        .nft-item-right__side {
+            @include media-min-md {
+                width: 23rem;
+            }
+            @include media-min-lg {
+                width: 25rem;
+            }
+            @include media-min-xl {
+                width: 31rem;
+            }
+        }
+    }
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        overflow-x: hidden;
+
+        &::before {
+          position: absolute;
+          z-index: -1;
+          content: "";
+          left: -30%;
+          top: 0%;
+          width: 65%;
+          height: 70%;
+          background: radial-gradient(
+            50% 50% at 50% 50%,
+            rgba(40, 94, 176, 0.41) 0%,
+            rgba(6, 19, 31, 0) 100%
+          );
+          @include media-min-lg {
+            left: -40rem;
+            width: 76.75rem;
+            height: 76.75rem;
+          }
+        }
+        &::after {
+          @include media-min-lg {
+            position: absolute;
+            z-index: -1;
+            content: "";
+            top: 1%;
+            right: -45rem;
+            width: 76.75rem;
+            height: 76.75rem;
+            background: radial-gradient(
+              50% 50% at 50% 50%,
+              rgba(124, 40, 176, 0.41) 0%,
+              rgba(6, 19, 31, 0) 100%
+            );
+            opacity: 0.5;
+          }
+        }
+    }
+}
+
+
+.preview-image-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    backdrop-filter: blur(2px);
+    z-index: 2000;
+    .close-icon {
+        position: absolute;
+        right: 2rem;
+        top: 2rem;
+        width: fit-content;
+        padding: 0.25rem;
+        width: 2rem;
+        height: 2rem;
+        border-radius: 0.25rem;
+        background-color: var(--1inch-bc-07);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        svg {
+            width: 1.25rem;
+            height: 1.25rem;
+            path {
+                fill: #000;
+            }
+        }
+    }
+    .preview-image-inner-wrapper {
+        height: 100vh;
+        overflow-y: auto;
+        @include scroll-bar(0.2rem,0.2rem);
+    }
+}
+
+.nft-page-bottom-padding {
+    padding-bottom: 13.75rem;
+    @include media-min-md {
+        padding-bottom: 0;
+    }
+}

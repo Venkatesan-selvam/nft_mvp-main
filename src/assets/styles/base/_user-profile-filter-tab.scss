@@ -1,0 +1,331 @@
+.profile-filter {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 2000;
+  width: 100%;
+  height: 100%;
+  background-color: var(--1inch-cbc-03);
+  @include media-min-lg {
+    position: sticky;
+    top: 6rem;
+    z-index: 9;
+    display: flex;
+    width: 20rem;
+    flex-direction: column;
+    align-items: flex-start;
+    border-radius: 1.5rem;
+    height: fit-content;
+    overflow: hidden;
+  }
+  .profile-filter-header {
+    display: flex;
+    width: 100%;
+    padding: 1.25rem 1rem 1rem 1.5rem;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--1inch-cbc-05);
+    border-bottom: 1px solid #2F3B4D;
+    @include media-min-alt(992px) {
+      display: none;
+    }
+    p {
+      margin: 0;
+      color: var(--1inch-tc-01);
+      font-size: 1.25rem;
+      font-weight: 500;
+      line-height: 1.5rem; /* 120% */
+    }
+    .icon {
+      display: flex;
+      padding: 0.25rem;
+      align-items: flex-start;
+      gap: 0.625rem;
+      border-radius: 0.5rem;
+      svg {
+        width: 1.5rem;
+        height: 1.5rem;
+      }
+    }
+  }
+  .p-filter {
+    display: flex;
+    padding: 1rem 0rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    align-self: stretch;
+    background-color: var(--1inch-cbc-03);
+    height: calc(100vh - 9rem);
+    overflow: auto;
+    @include scroll-bar(0.15rem,0.15rem);
+    @include media-min-lg {
+      border-radius: 1.5rem;
+    }
+    .accordion {
+      width: 100%;
+      height: fit-content;
+      .accordion-item {
+        background-color: transparent;
+        border: none;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+        .accordion-header {
+          width: 100%;
+          .accordion-button {
+            display: flex;
+            padding: 0.6875rem 1.25rem 0.6875rem 1.5rem;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.75rem;
+            border-radius: 0.75rem;
+            background-color: transparent;
+            box-shadow: none;
+            &.collapsed {
+              .downArrowIcon {
+                display: block !important;
+              }
+              .upArrowIcon {
+                display: none !important;
+              }
+            }
+            &:not(.collapsed) {
+              .upArrowIcon {
+                display: block !important;
+              }
+              .downArrowIcon {
+                display: none !important;
+              }
+            }
+            p {
+              margin: 0;
+              color: var(--1inch-tc-01);
+              font-size: 1rem;
+              font-weight: 400;
+              line-height: 1.625rem;
+            }
+            .end-wrappper {
+              display: flex;
+              gap: 0.75rem;
+              svg {
+                width: 1rem;
+                height: 1rem;
+              }
+            }
+            &::before,&::after {
+              display: none;
+            }
+          }
+        }
+        .accordion-collapse {
+          width: 100%;
+          .accordion-body {
+            display: flex;
+            padding: 0rem 1rem;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.5rem;
+
+            .filter-list {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              padding: 0.4375rem 0.5rem;
+              gap: 0.5rem;
+              width: 100%;
+              border-radius: 0.75rem;
+              background-color: var(--1inch-cbc-05);
+              &:hover {
+                @include media-min-lg {
+                  background-color: #1e2633;
+                }
+              }
+              span {
+                color: var(--1inch-tc-02);
+                text-align: right;
+                font-size: 1rem;
+                font-weight: 400;
+                line-height: 1.625rem;
+              }
+            }
+          }
+        }
+      }
+    }
+    .Nft-collections-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.25rem;
+      align-self: stretch;
+      .Nft-collections-header {
+        display: flex;
+        padding: 0.5625rem 1.5rem;
+        align-items: center;
+        gap: 0.625rem;
+        width: 100%;
+        p {
+          margin: 0;
+          color: var(--1inch-tc-01);
+          font-size: 1rem;
+          font-weight: 400;
+          line-height: 1.625rem;
+        }
+      }
+      .Nft-collections {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        border-radius: 1rem;
+        padding: 0rem 1rem;
+
+        @include media-min-lg {
+          // height: 26.625rem;
+          // overflow: auto;
+          // @include scroll-bar(0.15rem,0.15rem);
+        }
+        .nft-card {
+          display: flex;
+          padding: 0.5rem;
+          align-items: center;
+          gap: 1rem;
+          align-self: stretch;
+          width: 100%;
+          cursor: pointer;
+          background-color: transparent;
+          border-radius: 0.5rem;
+          &:hover {
+            @include media-min-lg {
+              background-color: var(--inch-cbc-09);
+            }
+          }
+          .nft-img {
+            width: 2.875rem;
+            height: 2.875rem;
+            border-radius: 0.5rem;
+            position: relative;
+            img {
+              width: 2.875rem;
+              height: 2.875rem;
+              border-radius: 0.5rem;
+              position: relative;
+              z-index: 1;
+            }
+            &::before {
+              border-radius: 0.5rem;
+              content: '';
+              position: absolute;
+              left: -1px;
+              right: -1px;
+              top: -1px;
+              bottom: -1px;
+              background: linear-gradient(178.39deg, #434343 0%, rgba(33, 33, 33, 0) 83.3%);
+            }
+          }
+          .nft-card-body {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.25rem;
+            width: calc(100% - 3.875rem);
+            .nft-title-wrapper {
+              display: flex;
+              align-items: center;
+              gap: 0.25rem;
+              width: 100%;
+              .nft-title {
+                margin: 0;
+                color: var(--1inch-tc-01);
+                text-align: center;
+                font-size: 1rem;
+                font-weight: 500;
+                line-height: 1.625rem;
+                max-width: calc(100% - 1.25rem);
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+              }
+              svg {
+                width: 1rem;
+                height: 1rem;
+              }
+            }
+            .stats-wrapper {
+              display: flex;
+              align-items: flex-start;
+              gap: 0.5rem;
+              .stats-nft {
+                display: flex;
+                align-items: flex-start;
+                gap: 0.25rem;
+                p {
+                  margin: 0;
+                  font-size: 0.8125rem;
+                  font-weight: 400;
+                  line-height: 1rem;
+                }
+                .icon {
+                  display: flex;
+                  width: 1rem;
+                  height: 1rem;
+                  padding: 0.125rem;
+                  justify-content: center;
+                  align-items: center;
+                  svg {
+                    width: 0.75rem;
+                    height: 0.75rem;
+                    flex-shrink: 0;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .profile-filter-footer {
+    display: flex;
+    width: 100%;
+    padding: 0.5rem 1rem 1rem 1rem;
+    align-items: center;
+    gap: 0.5rem;
+    opacity: 0.949999988079071;
+    background: var(--1inch-cbc-03);
+    backdrop-filter: blur(50px);
+    @include media-min-alt(992px) {
+      display: none;
+    }
+    .button {
+      display: flex;
+      padding: 0.5rem 1.125rem;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+      flex: 1 0 0;
+      border-radius: 0.75rem;
+      span {
+        color: var(--1inch-tc-01);
+        text-align: center;
+        font-size: 1rem;
+        font-weight: 500;
+        line-height: 1.625rem; /* 162.5% */
+      }
+      &.btn-reset {
+        border: 1px solid rgba(255, 255, 255, 0.25);
+      }
+      &.btn-filter {
+        background-color: var(--1inch-bc-08);
+        &:hover {
+          background-color: var(--1inch-bc-13);
+        }
+      }
+    }
+  }
+}
